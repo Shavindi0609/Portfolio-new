@@ -10,46 +10,34 @@ body {
     color: white;
 }
 
+/* Header */
 header {
     background: #2d6cdf;
     padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%; /* Ensures it takes full width */
-    position: fixed; /* Fix header */
+    width: 100%;
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000; /* Keep it above other content */
-}
-
-
-/* Push content down so it doesn’t hide under the fixed header */
-.home {
-    padding-top: 80px; /* Adjust based on header height */
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: bold;
     color: white;
 }
 
-/* Navigation */
-.nav-container {
-    flex: 1;  /* Allows the nav to take up the remaining space */
-    display: flex;
-    justify-content: center; /* Centers the nav links */
-}
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px; /* Adds spacing between links */
 }
 
 .nav-links li {
-    font-size: 16px;
+    margin: 0 15px;
 }
 
 .nav-links a {
@@ -78,39 +66,99 @@ header {
 .hire-btn:hover {
     background-color: #ffd700;
 }
-
-/* Home Section */
-.home {
+/* Hero Section */
+.hero {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: center;
     height: 100vh;
+    padding: 100px 5%; /* Pushes content below fixed header */
     background-color: #2d6cdf;
-    padding-top: 50px;
-
 }
 
-.home-content {
-    max-width: 500px;
+/* Align hero content in a 3-column grid */
+.hero-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+    gap: 10px; /* Add space between columns */
+    width: 100%;
+    max-width: 1200px;
 }
 
-.home-content h1 {
+/* Left Content (Text) */
+.left-content {
+    margin-top: 140px;
+    text-align: left;
+}
+
+.left-content h1 {
     font-size: 52px;
     font-weight: bold;
     line-height: 1.2;
-    margin-top: 30px;
 }
 
-.home-content .sub-heading {
-    font-size: 48px;
-    font-weight: bold;
-}
-
-.hero-content .description {
-    margin: 20px 0;
-    font-size: 14px;
-    font-weight: bold;
+.left-content p {
+    font-size: 16px;
     max-width: 400px;
     line-height: 1.5;
+    margin-top: 10px;
 }
+
+/* Right Content (Image + Social Links) */
+.right-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+}
+
+.hero-image img {
+    width: 550px; /* Make the image occupy 80% of the container */
+    max-width: none; /* Remove any maximum width limitation */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+}
+
+
+/* Social Links */
+
+.social-container {
+    margin-top: 140px;
+    margin-left: 90px;
+}
+
+.social-container h1 {
+    margin-top: 250px;
+    font-size: 52px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.2) translateY(-5px);
+    background: white;
+    color: black;
+    /*box-shadow: 0 0 5px white;*/
+}
+
